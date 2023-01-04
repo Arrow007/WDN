@@ -1,0 +1,36 @@
+---
+const { frontmatter } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+    <h1>{frontmatter.title}</h1>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	code{
+		font-size: .9rem;
+	}
+	p code{
+		background-color: rgb(236, 236, 236);
+		padding: 2px .25rem;
+		border-radius: 3px;
+	}
+	.astro-code{
+		padding: 1rem 1.25rem;
+		border-radius: 4px;
+	}
+	.line{
+		line-height:1.3rem;
+		tab-size: 2;
+	}
+</style>
