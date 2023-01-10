@@ -3,6 +3,9 @@ layout: '../../layouts/Markdown-Layout.astro'
 title: 'Franc and Langs'
 description: ''
 section: 'course-issues'
+lesson: ''
+quiz: ''
+error: ''
 ---
 
 Error message:

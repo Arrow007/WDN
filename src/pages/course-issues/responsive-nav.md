@@ -3,6 +3,9 @@ layout: '../../layouts/Markdown-Layout.astro'
 title: 'Video 112. Building a Responsive Nav'
 description: ''
 section: 'course-issues'
+lesson: ''
+quiz: ''
+error: ''
 ---
 
 You might have an issue where the unordered list is not spacing evenly.
