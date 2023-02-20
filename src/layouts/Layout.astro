@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -8,28 +8,47 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+    :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--accent)),
+            #da62c4 30%,
+            white 60%
+        );
+
+        --primary-color: #395290;
+        --secondary-color: #5d71a3;
+        --purple-shade: #7d25ad;
+        --primary-bg-color: #f8f8f8;
+        --secondary-bg-color: #eaeaea;
+    }
+
+    html {
+        font-family: "Shippori Mincho", serif;
+        background-color: var(--secondary-bg-color);
+    }
+    code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+    }
 </style>
