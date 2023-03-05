@@ -14,62 +14,85 @@ import SearchInput from "../components/SearchInput.astro";
         <div class="category">
             Or browse a category:
             <button>
-                <img src="./faq.svg" /> Frequenly Asked Questions
+                <img class="icon" src="./faq.svg" />
+                Frequenly Asked Questions
+                <img class="right-arrow" src="./right-arrow.svg" />
             </button>
             <button>
-                <img src="./issue.svg" />
+                <img class="icon" src="./issue.svg" />
                 Common Course Issues
+                <img class="right-arrow" src="./right-arrow.svg" />
             </button>
         </div>
     </main>
-
-    <style>
-        h3 {
-            color: var(--primary-color);
-            opacity: 0.8;
-            font-weight: 500;
-            font-size: 40px;
-            line-height: 47px;
-        }
-
-        main {
-            margin-top: 10vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .category {
-            margin-top: 60px;
-            color: var(--primary-color);
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 23px;
-            display: flex;
-            flex-direction: column;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .category button {
-            border-radius: 46px;
-            border: none;
-            background-color: var(--primary-bg-color);
-            padding: 15px 50px;
-            margin-top: 20px;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 23px;
-            color: var(--purple-shade);
-            width: 400px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .category button img {
-            margin-right: 20px;
-        }
-    </style>
 </Layout>
+
+<style>
+    h3 {
+        opacity: 0.8;
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    main {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .category {
+        margin-top: 60px;
+        color: var(--base-color);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .category button {
+        border-radius: 46px;
+        border: none;
+        background-color: var(--primary-bg-color);
+        padding: 15px 50px;
+        margin-top: 20px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        color: var(--primary-color);
+        width: 460px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+        transition: 0.2s;
+    }
+
+    .category button:hover {
+        color: var(--primary-bg-color);
+        background-color: var(--primary-color);
+    }
+
+    .category button:hover img.icon {
+        filter: invert(100%) sepia(0%) saturate(1135%) hue-rotate(63deg)
+            brightness(115%) contrast(95%);
+    }
+
+    .category button img.icon {
+        margin-right: 20px;
+        filter: invert(12%) sepia(92%) saturate(3779%) hue-rotate(275deg)
+            brightness(103%) contrast(87%);
+        width: 32px;
+        height: 32px;
+    }
+
+    .right-arrow {
+        margin-left: 15px;
+    }
+</style>

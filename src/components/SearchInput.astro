@@ -1,4 +1,4 @@
-<div>
+<div class="search-input">
     <form action="#">
         <button class="icon">
             <img src="./search-icon.svg" />
@@ -15,8 +15,8 @@
 
     <div class="line">
         <div class="pills">
-            <button class="white">FAQs</button>
-            <button class="purple">Common Issues</button>
+            <button>FAQs</button>
+            <button>Common Issues</button>
         </div>
 
         <p>Use keywords for best result</p>
@@ -24,8 +24,11 @@
 </div>
 
 <style>
+    .search-input {
+        display: block;
+    }
+
     form {
-        width: 60vw;
         height: 70px;
         margin-top: 3rem;
         background-color: var(--primary-bg-color);
@@ -59,10 +62,11 @@
         line-height: 24px;
         outline: none;
         flex-grow: 2;
+        font-family: inherit;
     }
 
     form button.submit {
-        background-color: var(--purple-shade);
+        background-color: var(--primary-color);
         border-radius: 4px;
         border: none;
         padding: 10px 20px;
@@ -87,15 +91,14 @@
         padding: 5px 10px;
         margin-right: 5px;
         cursor: pointer;
-    }
+        font-family: inherit;
 
-    .pills button.white {
         background-color: var(--primary-bg-color);
-        color: var(--purple-shade);
+        color: var(--primary-color);
     }
 
-    .pills button.purple {
-        background-color: var(--purple-shade);
+    .pills button.selected {
+        background-color: var(--primary-color);
         color: var(--primary-bg-color);
     }
 
