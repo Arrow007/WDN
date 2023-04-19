@@ -1,31 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import SearchInput from "../components/SearchInput.astro";
+import BasicPageTemplate from "../components/BasicPageTemplate.astro";
 ---
 
-<Layout title="Home Page">
-    <Navbar />
-
-    <main>
-        <h3>Have a question?</h3>
-        <SearchInput />
-
-        <div class="category">
-            Or browse a category:
-            <button>
-                <img class="icon" src="./faq.svg" />
-                Frequenly Asked Questions
-                <img class="right-arrow" src="./right-arrow.svg" />
-            </button>
-            <button>
-                <img class="icon" src="./issue.svg" />
-                Common Course Issues
-                <img class="right-arrow" src="./right-arrow.svg" />
-            </button>
-        </div>
-    </main>
-</Layout>
+<BasicPageTemplate title="Home Page" heading="Have a question?">
+    <div class="category">
+        Or browse a category:
+        <button>
+            <img class="icon" src="./faq.svg" />
+            Frequenly Asked Questions
+            <img class="right-arrow" src="./right-arrow.svg" />
+        </button>
+        <button>
+            <img class="icon" src="./issue.svg" />
+            Common Course Issues
+            <img class="right-arrow" src="./right-arrow.svg" />
+        </button>
+    </div>
+</BasicPageTemplate>
 
 <style>
     h3 {

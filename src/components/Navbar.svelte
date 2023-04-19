@@ -1,13 +1,42 @@
----
----
+<script>
+    import { onMount } from "svelte";
+
+    const ROUTES = [
+        {
+            label: "Home",
+            path: "/",
+        },
+        {
+            label: "FAQs",
+            path: "/faqs",
+        },
+        {
+            label: "Common Issues",
+            path: "/common-issues",
+        },
+    ];
+
+    let pathname = "";
+
+    onMount(() => {
+        pathname = window.location.pathname;
+    });
+</script>
 
 <nav>
     <div class="logo">Amadeus</div>
 
     <ul class="nav-list">
-        <li><a href="/" class="active">Home</a></li>
+        <!-- <li><a href="/" class="active">Home</a></li>
         <li><a href="/faqs">FAQs</a></li>
-        <li><a href="/common-issues">Common Issues</a></li>
+        <li><a href="/common-issues">Common Issues</a></li> -->
+        {#each ROUTES as route}
+            <li>
+                <a href={route.path} class:active={pathname === route.path}>
+                    {route.label}
+                </a>
+            </li>
+        {/each}
     </ul>
 </nav>
 
