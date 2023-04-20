@@ -6,16 +6,12 @@ const fs = require('fs')
 const folderPath = './src/pages/course-issues';
 const files = fs.readdirSync(folderPath);
 
+const simplifiedData = []
 
-
-var index = lunr(function () {
+const index = lunr(function () {
     this.ref('title');
     this.field('description');
     this.field('content');
-
-    var lunrIndex = this;
-
-
 
     files.forEach(function (file) {
         const filePath = path.join(folderPath, file);
@@ -26,10 +22,22 @@ var index = lunr(function () {
             description: data.description,
             content: content.replace(/\r?\n|\r/g, ''),
         };
-        lunrIndex.add(document);
-    });
+        
+        const fileName = file.slice(0,-3)
+        console.log(fileName)
+        simplifiedData.push({
+            title: data.title,
+            slug: fileName,
+            description: data.description
+        })
+        this.add(document);
+    }, this);
 
+    
+    
 });
+const indexFileName = 'searchIndex'
+fs.writeFileSync(`./public/${indexFileName}.json`, JSON.stringify(index))
 
-
-
+const simplifiedDataFileName = 'simplifiedData'
+fs.writeFileSync(`./public/${simplifiedDataFileName}.json`, JSON.stringify(simplifiedData))
