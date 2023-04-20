@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/Markdown-Layout.astro'
 title: 'Passport req.logout Callback Function'
-description: ''
+description: 'You must now add a callback function into req.logout and put your code inside it.'
 section: 'course-issues'
 lesson: ''
 quiz: ''

@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/Markdown-Layout.astro'
 title: 'Franc and Langs'
-description: ''
+description: 'If you are trying to import Franc and Lang, you might have this issue.'
 section: 'course-issues'
 lesson: ''
 quiz: ''
