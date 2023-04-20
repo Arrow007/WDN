@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "./Navbar.svelte";
-import SearchInput from "./SearchInput.astro";
+import Search from "./Search.svelte";
 
 export interface Props {
     title: string;
@@ -14,18 +14,15 @@ export interface Props {
 
     <main>
         <h3>{Astro.props.heading}</h3>
-        <SearchInput />
-
-        <slot />
+        <Search client:only />
     </main>
 </Layout>
 
 <style>
     h3 {
         opacity: 0.8;
-        font-weight: 500;
-        font-size: 40px;
-        line-height: 47px;
+        font-weight: 700;
+        font-size: 2.5rem;
     }
 
     main {

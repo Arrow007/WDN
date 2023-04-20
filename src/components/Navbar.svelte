@@ -24,12 +24,9 @@
 </script>
 
 <nav>
-    <div class="logo">Amadeus</div>
+    <a class="logo" href="/">Amadeus</a>
 
     <ul class="nav-list">
-        <!-- <li><a href="/" class="active">Home</a></li>
-        <li><a href="/faqs">FAQs</a></li>
-        <li><a href="/common-issues">Common Issues</a></li> -->
         {#each ROUTES as route}
             <li>
                 <a href={route.path} class:active={pathname === route.path}>
@@ -45,14 +42,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        max-width: 98rem;
+        padding: 0 1rem;
+        margin: auto;
     }
 
     .logo {
         color: var(--primary-color);
         font-weight: 700;
         font-size: 24px;
-        line-height: 28px;
-        margin-left: 90px;
+        text-decoration: none;
     }
 
     .nav-list {
