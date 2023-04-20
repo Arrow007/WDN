@@ -1,36 +1,38 @@
+<script>
+    
+
+    
+</script>
+
 <div class="search-input">
     <form action="#">
         <button class="icon">
-            <img src="./search-icon.svg" />
+            <img src="search-icon.svg" alt='search' />
         </button>
 
         <input placeholder="Search your issue..." />
 
         <button type="button" class="icon">
-            <img src="./clear.svg" />
+            <img src="clear.svg" alt='clear search' />
         </button>
 
         <button type="submit" class="submit">Search</button>
     </form>
 
     <div class="line">
-        <div class="pills">
-            <button>FAQs</button>
-            <button>Common Issues</button>
-        </div>
-
-        <p>Use keywords for best result</p>
+        Use keywords for best result
     </div>
 </div>
 
 <style>
     .search-input {
-        display: block;
+        width: 100%;
+        max-width: 50rem;
     }
 
     form {
         height: 70px;
-        margin-top: 3rem;
+        margin-top: 1rem;
         background-color: var(--primary-bg-color);
         box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
         border-radius: 4px;
@@ -55,13 +57,12 @@
     }
 
     form input {
+        width: 100%;
         background-color: inherit;
         border: none;
         font-weight: 400;
         font-size: 20px;
-        line-height: 24px;
         outline: none;
-        flex-grow: 2;
         font-family: inherit;
     }
 
@@ -74,12 +75,11 @@
         font-family: inherit;
         font-weight: 500;
         font-size: 20px;
-        line-height: 24px;
         cursor: pointer;
         margin-left: 10px;
     }
 
-    .pills {
+    /* .pills {
         margin-top: 20px;
     }
 
@@ -100,18 +100,13 @@
     .pills button.selected {
         background-color: var(--primary-color);
         color: var(--primary-bg-color);
-    }
+    } */
 
     .line {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .line p {
+        margin-top: 5px;
         font-weight: 300;
         font-size: 14px;
-        line-height: 16px;
         color: rgba(57, 82, 145, 0.7);
-        text-align: center;
+        text-align: right;
     }
 </style>

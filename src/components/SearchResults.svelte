@@ -1,21 +1,22 @@
----
-import BasicPageTemplate from "./BasicPageTemplate.astro";
+<script>
+    import BasicPageTemplate from "./BasicPageTemplate.astro";
+    import { searchResults } from "./store"
+    
+    // export interface Props {
+    //     title: string;
+    //     heading: string;
+    //     tag: string;
+    // }
+</script>
 
-export interface Props {
-    title: string;
-    heading: string;
-    tag: string;
-}
----
 
-<BasicPageTemplate title={Astro.props.title} heading={Astro.props.heading}>
     <!-- An example of a search result -->
-    <!-- <div class="results">
+    <div class="results">
         <div class="result-count">1 search results</div>
         <div class="result">
             <div class="heading">
                 <div class="title">Franc and Langs</div>
-                <div class="tag">{Astro.props.tag}</div>
+                <div class="tag"></div>
             </div>
             <div class="description">
                 If you are trying to import Franc and Lang, you might have this
@@ -25,8 +26,8 @@ export interface Props {
                 version of Franc that Colt is using.
             </div>
         </div>
-    </div> -->
-</BasicPageTemplate>
+    </div>
+    
 
 <style>
     .results {
