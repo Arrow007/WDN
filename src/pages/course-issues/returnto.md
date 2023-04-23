@@ -24,3 +24,5 @@ router.post('/login', passport.authenticate('local', { failureFlash: true, failu
 ```
 
 Keep in mind that this is less secure and you shouldn't do this if you are making a real project.
+
+If you would like to learn how to make it more secure, you can watch this video: https://www.youtube.com/watch?v=i0q8YCCffoM
