@@ -5,27 +5,36 @@
     import {searchResults, setSearchResults} from './store.js'
 
     const hashmap = {}
+    const searchParams = new URLSearchParams(window.location.search);
+    const searchTerm = searchParams.get('q');
+    console.log("search params: ", searchTerm)
 
-	fetch('searchIndex.json')
+	if(searchTerm){
+        fetch('searchIndex.json')
         .then((res) => res.json())
         .then((data) => {
             const index = lunr.Index.load(data);
-            index.search('franc').forEach((result) => {
+            console.log(index.search(searchTerm))
+            index.search(searchTerm).forEach((result) => {
                 hashmap[result.ref] = result.score
             })
-            console.log(hashmap)
         })
+    }
 
     fetch('simplifiedData.json')
         .then((res) => res.json())
         .then((data) => {
-            const filtered = data.filter((entry) => {
+            let filtered = data
+            if(Object.keys(hashmap).length !== 0){
+                filtered = data.filter((entry) => {
                 return hashmap[entry.title]
             })
+            }
             setSearchResults(filtered)
         })
+    $: console.log("search", $searchResults)
 </script>
 
 <SearchInput />
 
-<SearchResults title='sdf' tag='sdf' heading='sdfg' />
+<SearchResults results={$searchResults} title='sdf' tag='sdf' heading='sdfg' />

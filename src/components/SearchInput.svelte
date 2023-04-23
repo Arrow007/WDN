@@ -1,16 +1,27 @@
 <script>
-    
+    let searchInput = ''
+    function makeSearch(e){
+        e.preventDefault()
+        const searchTerm = searchInput.trim()
 
-    
+        if(searchTerm !== ''){
+            const queryParams = new URLSearchParams(window.location.search);
+            queryParams.set('q', searchTerm);
+
+            const newUrl = window.location.origin + window.location.pathname + '?' + queryParams.toString();
+            window.location.href = newUrl;
+        }
+        console.log(searchInput)
+    }
 </script>
 
 <div class="search-input">
-    <form action="#">
+    <form on:submit={makeSearch}>
         <button class="icon">
             <img src="search-icon.svg" alt='search' />
         </button>
 
-        <input placeholder="Search your issue..." />
+        <input placeholder="Search your issue..." bind:value={searchInput} />
 
         <button type="button" class="icon">
             <img src="clear.svg" alt='clear search' />

@@ -3,7 +3,7 @@ const path = require('path');
 const lunr = require('lunr');
 const fs = require('fs')
 
-const folderPath = './src/pages/course-issues';
+const folderPath = './src/pages/common-issues';
 const files = fs.readdirSync(folderPath);
 
 const simplifiedData = []
