@@ -12,7 +12,7 @@ export interface Props {
 <Layout title={Astro.props.title}>
     <Navbar client:load />
 
-    <img class='cat' src="/public/cat.svg" alt="">
+    <img class='cat' src="/cat.svg" alt="">
     <main>
         <h3>{Astro.props.heading}</h3>
         <Search client:only />
