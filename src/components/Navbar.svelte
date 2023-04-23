@@ -67,7 +67,6 @@
     .nav-list li a {
         font-weight: 400;
         font-size: 16px;
-        line-height: 19px;
         text-decoration: none;
         margin-right: 20px;
         color: inherit;

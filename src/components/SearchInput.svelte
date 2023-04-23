@@ -87,7 +87,6 @@
         border-radius: 21px;
         border: none;
         font-size: 16px;
-        line-height: 19px;
         padding: 5px 10px;
         margin-right: 5px;
         cursor: pointer;

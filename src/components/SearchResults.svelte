@@ -42,7 +42,6 @@
         margin-bottom: 10px;
         font-weight: 300;
         font-size: 14px;
-        line-height: 16px;
         text-align: center;
     }
 
@@ -64,7 +63,6 @@
         color: var(--primary-color);
         font-weight: 500;
         font-size: 20px;
-        line-height: 23px;
     }
 
     .tag {
@@ -72,7 +70,6 @@
         border-radius: 21px;
         font-size: 14px;
         padding: 10px 20px;
-        line-height: 19px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,6 +79,5 @@
     .description {
         color: var(--base-color);
         font-size: 16px;
-        line-height: 19px;
     }
 </style>
