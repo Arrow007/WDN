@@ -32,6 +32,7 @@
 <style>
     .results {
         margin-top: 50px;
+        max-width: 65rem;
     }
 
     .result-count {
@@ -48,7 +49,7 @@
     .result {
         background-color: var(--primary-bg-color);
         border-radius: 38px;
-        padding: 20px 30px;
+        padding: 1.5rem 2.5rem;
         margin-bottom: 20px;
     }
 

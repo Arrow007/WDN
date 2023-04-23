@@ -12,6 +12,7 @@ export interface Props {
 <Layout title={Astro.props.title}>
     <Navbar client:load />
 
+    <img class='cat' src="/public/cat.svg" alt="">
     <main>
         <h3>{Astro.props.heading}</h3>
         <Search client:only />
@@ -22,14 +23,23 @@ export interface Props {
     h3 {
         opacity: 0.8;
         font-weight: 700;
-        font-size: 2.5rem;
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
     }
 
     main {
-        margin-top: 10vh;
+        margin-top: 4vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    .cat{
+        top: 25%;
+        right: calc(38vw - 32rem);
+        width: 80rem;
+        position: fixed;
+        z-index: -10;
+        pointer-events: none;
     }
 </style>

@@ -104,9 +104,10 @@
 
     .line {
         margin-top: 5px;
+        margin-left: 1rem;
         font-weight: 300;
         font-size: 14px;
         color: rgba(57, 82, 145, 0.7);
-        text-align: right;
+        text-align: left;
     }
 </style>
