@@ -11,8 +11,9 @@ export const searchResults = derived(
 	searchParams,
 	async ($searchParams, set) => {
 		let hashmap = {};
+    let data
 		if ($searchParams) {
-			const data = await fetch('searchIndex.json').then((res) => res.json());
+			data = await fetch('searchIndex.json').then((res) => res.json());
 			const index = lunr.Index.load(data);
 			index.search($searchParams).forEach((result) => {
 				hashmap[result.ref] = result.score;
@@ -24,9 +25,11 @@ export const searchResults = derived(
 				return hashmap[entry.title] !== undefined;
 			});
 			set(filtered);
+		} else if(data) {
+			set([]);
 		} else {
-			set(json);
-		}
+      set(json)
+    }
 	},
 	[]
 );
