@@ -10,6 +10,7 @@ const simplifiedData = []
 
 const index = lunr(function () {
     this.ref('title');
+    this.field('title');
     this.field('description');
     this.field('content');
 
@@ -24,7 +25,6 @@ const index = lunr(function () {
         };
         
         const fileName = file.slice(0,-3)
-        console.log(fileName)
         simplifiedData.push({
             title: data.title,
             slug: fileName,
@@ -32,9 +32,6 @@ const index = lunr(function () {
         })
         this.add(document);
     }, this);
-
-    
-    
 });
 const indexFileName = 'searchIndex'
 fs.writeFileSync(`./public/${indexFileName}.json`, JSON.stringify(index))
