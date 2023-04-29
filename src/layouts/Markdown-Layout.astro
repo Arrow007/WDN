@@ -12,7 +12,6 @@ const { frontmatter } = Astro.props;
         <meta name="generator" content={Astro.generator} />
 
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -53,6 +52,10 @@ const { frontmatter } = Astro.props;
         color: var(--base-color);
     }
 
+    body{
+        margin: 0;
+    }
+
     code {
         font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
@@ -65,7 +68,7 @@ const { frontmatter } = Astro.props;
         font-size: clamp(1rem, 2.5vw, 1.25rem);
         margin-bottom: 15rem;
         margin-top: 2rem;
-        padding: 2rem 5rem;
+        padding: 0.25rem .5rem;
         border-radius: 6px;
         background-color: var(--primary-bg-color)
     }
@@ -84,5 +87,16 @@ const { frontmatter } = Astro.props;
     }
     .line {
         tab-size: 2;
+    }
+
+    @media (min-width: 650px) {
+        .md-layout{
+            padding: 1rem 3rem;
+        }
+    }
+    @media (min-width: 800px) {
+        .md-layout{
+            padding: 2rem 5rem;
+        }
     }
 </style>

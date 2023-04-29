@@ -1,86 +1,47 @@
 ---
-import BasicPageTemplate from "../components/BasicPageTemplate.astro";
+import Navbar from "../components/Navbar.svelte";
+import SearchInput from "../components/SearchInput.svelte";
+import SearchResults from "../components/SearchResults.svelte";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<BasicPageTemplate title="Home Page" heading="Have a question?">
-    <div class="category">
-        Or browse a category:
-        <button>
-            <img class="icon" src="./faq.svg" />
-            Frequenly Asked Questions
-            <img class="right-arrow" src="./right-arrow.svg" />
-        </button>
-        <button>
-            <img class="icon" src="./issue.svg" />
-            Common Course Issues
-            <img class="right-arrow" src="./right-arrow.svg" />
-        </button>
-    </div>
-</BasicPageTemplate>
+<Layout title='Home Page'>
+	<Navbar />
+	<img class="cat" src="/cat.svg" alt="" />
+	<main>
+		<h2>Have a question?</h2>
+		<SearchInput client:only />
+
+		<SearchResults client:only />
+	</main>
+</Layout>
 
 <style>
+    h2 {
+		opacity: 0.8;
+		font-weight: 700;
+		font-size: clamp(1.5rem, 5vw, 2.5rem);
+	}
+
+	main {
+		margin-top: 4vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.cat {
+		top: 25%;
+		right: calc(38vw - 32rem);
+		width: 80rem;
+		position: fixed;
+		z-index: -10;
+		pointer-events: none;
+	}
     h3 {
         opacity: 0.8;
         font-weight: 500;
         font-size: 40px;
-    }
-
-    main {
-        margin-top: 10vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .category {
-        margin-top: 60px;
-        color: var(--base-color);
-        font-weight: 500;
-        font-size: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-    }
-
-    .category button {
-        border-radius: 46px;
-        border: none;
-        background-color: var(--primary-bg-color);
-        padding: 15px 50px;
-        margin-top: 20px;
-        font-weight: 500;
-        font-size: 20px;
-        color: var(--primary-color);
-        width: 460px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: inherit;
-        transition: 0.2s;
-    }
-
-    .category button:hover {
-        color: var(--primary-bg-color);
-        background-color: var(--primary-color);
-    }
-
-    .category button:hover img.icon {
-        filter: invert(100%) sepia(0%) saturate(1135%) hue-rotate(63deg)
-            brightness(115%) contrast(95%);
-    }
-
-    .category button img.icon {
-        margin-right: 20px;
-        filter: invert(12%) sepia(92%) saturate(3779%) hue-rotate(275deg)
-            brightness(103%) contrast(87%);
-        width: 32px;
-        height: 32px;
-    }
-
-    .right-arrow {
-        margin-left: 15px;
     }
 </style>

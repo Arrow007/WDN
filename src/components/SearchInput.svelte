@@ -21,23 +21,23 @@
 	}
 </script>
 
-<div class="search-input">
+<section class="search-input">
 	<form on:submit={makeSearch}>
-		<button class="icon">
+		<button class="icon" aria-hidden="true" tabindex="-1">
 			<img src="search-icon.svg" alt="search" />
 		</button>
 
 		<input placeholder="Search your issue..." bind:value={searchInput} />
 
-		<button type="button" class="icon" on:click={clearSearch}>
+		<button type="button" class="icon" on:click={clearSearch} aria-label="Clear search">
 			<img src="clear.svg" alt="clear search" />
 		</button>
 
-		<button type="submit" class="submit">Search</button>
+		<button type="submit" class="submit" aria-label="Submit search">Search</button>
 	</form>
 
-	<div class="line">Use keywords for best result</div>
-</div>
+	<div class="line">Use keywords for best results</div>
+</section>
 
 <style>
 	.search-input {
@@ -61,7 +61,7 @@
 		height: 100%;
 	}
 
-	form button.icon {
+	.icon {
 		width: 20px;
 		height: 20px;
 		border: none;
@@ -81,7 +81,7 @@
 		font-family: inherit;
 	}
 
-	form button.submit {
+	.submit {
 		background-color: var(--primary-color);
 		border-radius: 4px;
 		border: none;
@@ -92,6 +92,12 @@
 		font-size: 20px;
 		cursor: pointer;
 		margin-left: 10px;
+		transition: all 200ms;
+	}
+
+	.submit:hover {
+		color: var(--primary-color);
+		background-color: var(--primary-bg-color);
 	}
 
 	/* .pills {
