@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-	import { searchResults, setSearchParams } from './store.js';
+	import { searchParams, searchResults, setSearchParams } from './store.js';
 
 	onMount(() => {
 		window.addEventListener('popstate', (event) => {
@@ -11,7 +11,7 @@
 	})
 </script>
 
-{#if $searchResults.length !== 0}
+{#if $searchParams}
 	<section class="results" aria-label="Search Results">
 		<div class="result-count">
 			{$searchResults.length} search {$searchResults.length !== 1 ? 'results' : 'result'}
