@@ -11,25 +11,27 @@ export const searchResults = derived(
 	searchParams,
 	async ($searchParams, set) => {
 		let hashmap = {};
-    let data
+		let data;
 		if ($searchParams) {
 			data = await fetch('searchIndex.json').then((res) => res.json());
 			const index = lunr.Index.load(data);
 			index.search($searchParams).forEach((result) => {
 				hashmap[result.ref] = result.score;
 			});
-		}
-		const json = await fetch('simplifiedData.json').then((res) => res.json());
-		if (Object.keys(hashmap).length !== 0) {
-			const filtered = json.filter((entry) => {
-				return hashmap[entry.title] !== undefined;
-			});
-			set(filtered);
-		} else if(data) {
-			set([]);
+			const json = await fetch('simplifiedData.json').then((res) => res.json());
+			if (Object.keys(hashmap).length !== 0) {
+				const filtered = json.filter((entry) => {
+					return hashmap[entry.title] !== undefined;
+				});
+				set(filtered);
+			} else if (data) {
+				set([]);
+			} else {
+				set(json);
+			}
 		} else {
-      set(json)
-    }
+			set([]);
+		}
 	},
 	[]
 );

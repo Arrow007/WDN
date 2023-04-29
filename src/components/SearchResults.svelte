@@ -1,61 +1,77 @@
 <script>
-	import BasicPageTemplate from './BasicPageTemplate.astro';
-	import { searchResults } from './store';
-
-	// export interface Props {
-	//     title: string;
-	//     heading: string;
-	//     tag: string;
-	// }
-	export let results;
+	import { searchResults } from './store.js';
 </script>
 
-<!-- An example of a search result -->
-<div class="results">
-	<div class="result-count">{results.length} search result{results.length !== 1 ? 's' : ''}</div>
-	{#each results as result}
-		<div class="result">
-			<div class="heading">
-				<div class="title">
-					<!-- Franc and Langs -->
-					{result.title}
-				</div>
-				<div class="tag" />
-			</div>
-			<div class="description">
-				{result.description}
-				<!-- If you are trying to import Franc and Lang, you might have this
-                issue. This is because Franc uses import while Lang uses
-                require. The newest version of Franc imposes this restriction
-                which means you won't have an issue if you install the same
-                version of Franc that Colt is using. -->
-			</div>
+{#if $searchResults.length !== 0}
+	<section class="results" aria-label="Search Results">
+		<div class="result-count">
+			{$searchResults.length} search {$searchResults.length !== 1 ? 'results' : 'result'}
 		</div>
-	{/each}
-</div>
+		<ol>
+			{#each $searchResults as result}
+				<li class="result">
+					<a href={`/common-issues/${result.slug}`}>
+						<div class="heading">
+							<h3 class="title">
+								{result.title}
+							</h3>
+							<div class="tag" />
+						</div>
+						<div class="description">
+							{result.description}
+						</div>
+					</a>
+				</li>
+			{/each}
+		</ol>
+	</section>
+{/if}
 
 <style>
+	li {
+		transition: all 200ms ease-out;
+	}
+
+	li:hover {
+		translate: 0 -5px;
+	}
+
+	h3 {
+		margin: 0;
+	}
+
+	ol {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	a {
+		width: inherit;
+		height: inherit;
+		display: block;
+		padding: 1.5rem 2.5rem;
+		text-decoration: none;
+	}
+
 	.results {
 		margin-top: 50px;
 		max-width: 65rem;
-        width: 100%;
-        margin-bottom: 15rem;
+		width: 100%;
+		margin-bottom: 15rem;
 	}
 
 	.result-count {
-		/* display: flex;
-        justify-content: end; */
 		margin-right: 30px;
 		margin-bottom: 10px;
 		font-weight: 200;
 		font-size: 14px;
-        margin-left: 1.5rem;
+		margin-left: 1.5rem;
 	}
 
 	.result {
 		background-color: var(--primary-bg-color);
 		border-radius: 4px;
-		padding: 1.5rem 2.5rem;
 		margin-bottom: 20px;
 	}
 
