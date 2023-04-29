@@ -1,5 +1,14 @@
 <script>
-	import { searchResults } from './store.js';
+  import { onMount } from 'svelte';
+	import { searchResults, setSearchParams } from './store.js';
+
+	onMount(() => {
+		window.addEventListener('popstate', (event) => {
+			const url = new URL(event.target.navigation.currentEntry.url)
+			const params = new URLSearchParams(url.search).get('q');
+			setSearchParams(params);
+		})
+	})
 </script>
 
 {#if $searchResults.length !== 0}
