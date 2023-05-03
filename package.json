@@ -9,7 +9,7 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"parse": "node parsensearch.js",
+		"index": "node createIndex.js",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
