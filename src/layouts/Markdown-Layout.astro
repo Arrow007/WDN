@@ -1,10 +1,10 @@
 ---
-import Layout from './Layout.astro'
+import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
 ---
 
-<Layout title={frontmatter.title} description ={frontmatter.description} >
+<Layout title={frontmatter.title} description={frontmatter.description}>
 	<main class="md-layout">
 		<h1>{frontmatter.title}</h1>
 		<slot />
@@ -48,7 +48,7 @@ const { frontmatter } = Astro.props;
 
 	@media (min-width: 650px) {
 		.md-layout {
-      margin-top: 3rem;
+			margin-top: 3rem;
 			padding: 1rem 3rem;
 		}
 	}
