@@ -10,7 +10,7 @@
 			const queryParams = new URLSearchParams(window.location.search);
 			queryParams.set('q', searchTerm);
 
-			const newUrl = window.location.origin + window.location.pathname + '?' + queryParams.toString();
+			const newUrl = window.location.origin + '/WDN/' + window.location.pathname + '?' + queryParams.toString();
 			setSearchParams(searchTerm);
 			history.pushState(null, null, newUrl);
 		}

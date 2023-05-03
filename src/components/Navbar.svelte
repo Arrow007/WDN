@@ -1,5 +1,5 @@
 <nav>
-	<a class="logo" href="/">Amadeus</a>
+	<a class="logo" href="/WDN">Amadeus</a>
 </nav>
 
 <style>
