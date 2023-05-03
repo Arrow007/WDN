@@ -1,56 +1,56 @@
 ---
+import Navbar from '../components/Navbar.svelte';
 export interface Props {
-    title: string;
+	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+        <link rel="icon" type="image/png" href="/favicon.png?" />
 
-        <title>{title}</title>
-    </head>
-    <body>
-        <slot />
-    </body>
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navbar />
+		<slot />
+	</body>
 </html>
-<style is:global>
-    :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            #da62c4 30%,
-            white 60%
-        );
 
-        --base-color: #395290;
-        --base-2: #5d71a3;
-        --primary-color: #7d25ad;
-        --primary-bg-color: #f8f8f8;
-        --secondary-bg-color: #eaeaea;
-    }
+<style>
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 
-    html {
-        font-family: "Shippori Mincho", serif;
-        background-color: var(--secondary-bg-color);
-        color: var(--base-color);
-    }
+		--base-color: #395290;
+		--base-2: #5d71a3;
+		--primary-color: #7d25ad;
+		--primary-bg-color: #f8f8f8;
+		--secondary-bg-color: #eaeaea;
+	}
 
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-    }
+	html {
+		font-family: 'Shippori Mincho', serif;
+		background-color: var(--secondary-bg-color);
+		color: var(--base-color);
+	}
+
+	body {
+		margin: 0;
+	}
 </style>

@@ -24,7 +24,6 @@
 							<h3 class="title">
 								{result.title}
 							</h3>
-							<div class="tag" />
 						</div>
 						<div class="description">
 							{result.description}
@@ -80,6 +79,7 @@
 
 	.result {
 		background-color: var(--primary-bg-color);
+		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
 		border-radius: 4px;
 		margin-bottom: 20px;
 	}
@@ -95,17 +95,7 @@
 		color: var(--primary-color);
 		font-weight: 500;
 		font-size: 20px;
-	}
-
-	.tag {
-		background-color: var(--primary-color);
-		border-radius: 21px;
-		font-size: 14px;
-		padding: 10px 20px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: var(--primary-bg-color);
+		font-weight: 600;
 	}
 
 	.description {

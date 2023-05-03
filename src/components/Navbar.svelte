@@ -9,7 +9,7 @@
         justify-content: space-between;
         max-width: 98rem;
         padding: 0 1rem;
-        margin: auto;
+        margin: 1rem auto;
     }
 
     .logo {

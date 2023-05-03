@@ -75,10 +75,17 @@
 		width: 100%;
 		background-color: inherit;
 		border: none;
-		font-weight: 400;
+		font-weight: 500;
 		font-size: 20px;
 		outline: none;
 		font-family: inherit;
+		color: inherit;
+	}
+
+	form input::placeholder {
+		color: rgba(var(--base-color), 0.1);
+		opacity: 0.6;
+		font-weight: 400;
 	}
 
 	.submit {

@@ -1,23 +1,20 @@
 ---
-import Navbar from "../components/Navbar.svelte";
-import SearchInput from "../components/SearchInput.svelte";
-import SearchResults from "../components/SearchResults.svelte";
-import Layout from "../layouts/Layout.astro";
+import SearchInput from '../components/SearchInput.svelte';
+import SearchResults from '../components/SearchResults.svelte';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title='Home Page'>
-	<Navbar />
+<Layout title="Home Page" description="Search common issues in Colt's Web Dev Bootcamp Udemy course.">
 	<img class="cat" src="/cat.svg" alt="" />
 	<main>
 		<h2>Have a question?</h2>
 		<SearchInput client:only />
-
 		<SearchResults client:only />
 	</main>
 </Layout>
 
 <style>
-    h2 {
+	h2 {
 		opacity: 0.8;
 		font-weight: 700;
 		font-size: clamp(1.5rem, 5vw, 2.5rem);
@@ -39,9 +36,9 @@ import Layout from "../layouts/Layout.astro";
 		z-index: -10;
 		pointer-events: none;
 	}
-    h3 {
-        opacity: 0.8;
-        font-weight: 500;
-        font-size: 40px;
-    }
+	h3 {
+		opacity: 0.8;
+		font-weight: 500;
+		font-size: 40px;
+	}
 </style>

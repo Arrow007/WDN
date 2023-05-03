@@ -1,102 +1,60 @@
 ---
-import Navbar from "../components/Navbar.svelte";
+import Layout from './Layout.astro'
 
 const { frontmatter } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+<Layout title={frontmatter.title} description ={frontmatter.description} >
+	<main class="md-layout">
+		<h1>{frontmatter.title}</h1>
+		<slot />
+	</main>
+</Layout>
 
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap"
-            rel="stylesheet"
-        />
-
-        <title>{frontmatter.title}</title>
-    </head>
-    <body>
-        <Navbar />
-        <main class='md-layout'>
-            <h1>{frontmatter.title}</h1>
-            <slot />
-        </main>
-    </body>
-</html>
 <style is:global>
-    :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(
-            45deg,
-            rgb(var(--accent)),
-            #da62c4 30%,
-            white 60%
-        );
+	.md-layout {
+		max-width: 53rem;
+		margin: auto;
+		font-size: clamp(1rem, 2.5vw, 1.25rem);
+		margin-bottom: 15rem;
+		margin-top: 1rem;
+		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+		background-color: var(--primary-bg-color);
+		box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.05);
+	}
+	.md-layout p {
+		padding: 0 5px;
+	}
 
-        --base-color: #395290;
-        --base-2: #5d71a3;
-        --primary-color: #7d25ad;
-        --primary-bg-color: #f8f8f8;
-        --secondary-bg-color: #eaeaea;
-    }
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+			monospace;
+		font-size: 0.8em;
+	}
 
-    html {
-        font-family: "Shippori Mincho", serif;
-        background-color: var(--secondary-bg-color);
-        color: var(--base-color);
-    }
+	p code {
+		background-color: rgb(236, 236, 236);
+		padding: 2px 0.25rem;
+		border-radius: 3px;
+	}
+	.astro-code {
+		padding: 1rem 1.25rem;
+		border-radius: 4px;
+	}
+	.line {
+		tab-size: 2;
+	}
 
-    body{
-        margin: 0;
-    }
-
-    code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        font-size: .8em;
-    }
-    
-    .md-layout{
-        max-width: 53rem;
-        margin: auto;
-        font-size: clamp(1rem, 2.5vw, 1.25rem);
-        margin-bottom: 15rem;
-        margin-top: 2rem;
-        padding: 0.25rem .5rem;
-        border-radius: 6px;
-        background-color: var(--primary-bg-color)
-    }
-    .md-layout p {
-        padding: 0 5px;
-    }
-
-    p code {
-        background-color: rgb(236, 236, 236);
-        padding: 2px 0.25rem;
-        border-radius: 3px;
-    }
-    .astro-code {
-        padding: 1rem 1.25rem;
-        border-radius: 4px;
-    }
-    .line {
-        tab-size: 2;
-    }
-
-    @media (min-width: 650px) {
-        .md-layout{
-            padding: 1rem 3rem;
-        }
-    }
-    @media (min-width: 800px) {
-        .md-layout{
-            padding: 2rem 5rem;
-        }
-    }
+	@media (min-width: 650px) {
+		.md-layout {
+      margin-top: 3rem;
+			padding: 1rem 3rem;
+		}
+	}
+	@media (min-width: 800px) {
+		.md-layout {
+			padding: 1rem 5rem;
+		}
+	}
 </style>
