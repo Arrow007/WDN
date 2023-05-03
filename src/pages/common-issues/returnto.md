@@ -3,9 +3,6 @@ layout: '../../layouts/Markdown-Layout.astro'
 title: 'ReturnTo Behavior Not Working'
 description: "If you're failing to get returnTo behavior to work on lesson 519 (even though it has no error message), it's probably because of passport's update."
 section: 'course-issues'
-lesson: ''
-quiz: ''
-error: ''
 ---
 
 If you're failing to get returnTo behavior to work on lesson 519 (even though it has no error message), it's probably because of passport's update.
