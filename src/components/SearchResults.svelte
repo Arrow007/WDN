@@ -19,7 +19,7 @@
 		<ol>
 			{#each $searchResults as result}
 				<li class="result">
-					<a href={`/common-issues/${result.slug}`}>
+					<a href={`/WDN/common-issues/${result.slug}`}>
 						<div class="heading">
 							<h3 class="title">
 								{result.title}
